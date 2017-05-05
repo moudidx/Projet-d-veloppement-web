@@ -1,0 +1,64 @@
+<head>
+  <title>inobo-0-2D</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> add}}
+  <br>
+
+
+</body>
+
+<template name="root">
+root
+</template>
+
+
+<template name="add">
+  {{> loginButtons}}<br><br>
+
+{{#if loggedIn}}
+
+    <form class="addRun">
+        <select name="spot">
+            {{#each spots}}
+                <option value="{{name}}">{{name}}</option>
+            {{/each}}
+        </select><br>
+        <input type="text" placeholder="hauteur" name="hauteur" /><br>
+        <input type="text" placeholder="vitesse" name="vitesse" /><br>
+        <input type="submit" />
+    </form>
+    {{>show}}
+{{/if}}
+</template>
+
+<template name="show">
+    <p>
+        <form class="sortRun">
+            <select name="spot" class="change">
+                {{#each spots}}
+                    <option value="{{name}}">{{name}}</option>
+                {{/each}}
+            </select>
+            Sort by : <select name="criteria"  class="change">
+                <option value="hauteur">hauteur</option>
+                <option value="vitesse">vitesse</option>
+            </select>
+            <input type="submit" />
+        </form>
+    </p>
+
+    <ul>
+        {{#each sortedData}}
+            <li>
+                Spot : {{spot_name}} ;<br>
+                Utilisateur : {{user_name}};<br>
+                hauteur : {{hauteur}};<br>
+                vitesse : {{vitesse}};
+            </li>
+        {{/each}}
+    </ul>
+</template>

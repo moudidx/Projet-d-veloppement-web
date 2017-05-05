@@ -1,0 +1,27 @@
+<body>
+    <header><h1>VotingApp</h1></header>
+
+    <main>
+
+    {{> loginButtons}} <br><br>
+
+    {{#if loggedIn}}
+
+    <form class="new">
+        <input type="text" placeholder="itemOne" name="itemOne" />
+        <input type="text" placeholder="itemTwo" name="itemTwo" />
+        <input type="submit">
+    </form><br>
+
+    {{/if}}
+
+        <ul>
+        {{#each items}}
+            <li>
+                <span class="vote1">{{itemOne.text}} ({{itemOne.value}})</span> vs <span class="vote2">{{itemTwo.text}} ({{itemTwo.value}})</span> <span class="delete">[X]</span>
+            </li>
+        {{/each}}
+        </ul>
+
+    </main>
+</body>
