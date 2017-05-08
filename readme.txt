@@ -14,4 +14,5 @@ ouvrir un autre cmd et taper:
 - db spots.insert ({'text' ou bien 'name':'-------un autre texte----'});
 - pour afficher les données : 
 	- db spots.find ({'votre texte'});
+.
 
